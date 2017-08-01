@@ -21,6 +21,7 @@ namespace TodoList
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -30,7 +31,7 @@ namespace TodoList
         {
             // Add framework services.
             services.AddMvc();
-            services.AddEntityFrameworkNpgsql().AddDbContext<TodoListDb>();
+            // services.AddEntityFrameworkNpgsql().AddDbContext<TodoListDb>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

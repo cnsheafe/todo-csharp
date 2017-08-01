@@ -16,17 +16,27 @@ namespace TodoList
         public IEnumerable<TodoList.Todo> GetList()
         {
             using (TodoListDb db = new TodoListDb()) {
-                return db.TodoLists.ToList();            }
+                return db.TodoLists.ToList();            
+            }
         }
 
         [HttpPost]
-        public void MakeList([FromBody]JObject list) {
-            Todo posted = list.ToObject<Todo>();
-            Console.WriteLine(list);
-            using (TodoListDb db = new TodoListDb()) {
-                db.TodoLists.Add(posted);
-                db.SaveChanges();
-            }
+        public void MakeList() {
+            string connString = "Host=localhost;Username=myUsername;Password=myPassword;Database=TodoList";
+            var db = new HandleDbConn(connString);
+            db.Create("t1");
+        }
+
+        public void AddListItems([FromBody]JObject items) {
+            JToken todoItems = items.GetValue("items");
+            List<Todo> myTodos = todoItems.ToObject<List<Todo>>();
+            string connString = 
+                "Host=localhost;"+
+                "Username=myUsername;"+
+                "Password=myPassword;"+
+                "Database=TodoList";
+            var db = new HandleDbConn(connString);
+            db.Add(myTodos, "t1");
         }
     }
 }

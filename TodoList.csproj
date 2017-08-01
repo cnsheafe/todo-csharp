@@ -9,15 +9,16 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="1.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
+    <!-- <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" /> -->
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.0-preview4-final" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostGreSql" Version="1.1.0" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostGreSql.Design" Version="1.1.0" />
+    <!-- <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.0-preview4-final" /> -->
+    <PackageReference Include="npgsql" Version="3.2.5" />
+    <!-- <PackageReference Include="Npgsql.EntityFrameworkCore.PostGreSql" Version="1.1.0" /> -->
+    <!-- <PackageReference Include="Npgsql.EntityFrameworkCore.PostGreSql.Design" Version="1.1.0" /> -->
   </ItemGroup>
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.EntityFrameWorkCore.Tools.Dotnet" Version="1.0.1" />
+    <!-- <DotNetCliToolReference Include="Microsoft.EntityFrameWorkCore.Tools.Dotnet" Version="1.0.1" /> -->
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.1" />
   </ItemGroup>
 </Project>
